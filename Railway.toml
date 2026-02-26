@@ -1,0 +1,16 @@
+[build]
+builder = "NIXPACKS"
+
+[phases.setup]
+nixPkgs = ["python311", "gcc", "gfortran", "python311Packages.pip"]
+
+[phases.install]
+cmds = [
+    "pip install --upgrade pip",
+    "pip install numpy==1.24.3",
+    "pip install pandas==2.0.3",
+    "pip install python-telegram-bot==20.7 requests==2.31.0 aiohttp==3.9.1"
+]
+
+[start]
+cmd = "python main.py"
